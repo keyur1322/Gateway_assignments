@@ -38,7 +38,7 @@ namespace SourceControlAssignment1.Models
         [Required]
         [Display(Name = "Enter your password")]
         [DataType(DataType.Password)]
-        [RegularExpression("(0/91)?[7-9][0-9]{9}", ErrorMessage = "Please your password must contain alteast 8 character and must have one digit, lowercase, uppercase, special character")]
+        [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Please your password must have contain one digit, lowercase and uppercase")]
         public string Password { get; set; }
 
 
