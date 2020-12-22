@@ -1,0 +1,150 @@
+﻿@model SourceControlFinalAssignment.Models.tbl_userdata
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<style>
+
+    body {
+        background-color: rgb(219, 226, 226);
+    }
+
+    .row {
+        background-color: white;
+        border-radius: 30px;
+        box-shadow: 12px 12px 22px grey;
+    }
+
+    img {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+
+    .mybtn {
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+        .mybtn:hover {
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+        }
+        .imgprop{
+            max-width: 100%;
+            height: 1200px;
+        }
+</style>
+
+
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <body>
+        <section class="Form my-4 mx-5">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-5">
+                        <img src="~/projectimages/image1.jpg" class="imgprop" alt="Please Wait lo load" />
+                    </div>
+                    <div class="col-lg-7 px-5 pt-5">
+                        <h1 class="font-weight-bold py-0">Register</h1>
+                        <h4>Register for a new account</h4>
+                        <form>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+
+
+                                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control my-3 p-4", placeholder = @Html.DisplayNameFor(model => model.Username) } })
+                                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control my-3 p-4", placeholder = @Html.DisplayNameFor(model => model.Email) } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control my-3 p-4", placeholder = @Html.DisplayNameFor(model => model.Password) } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+
+                                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control my-3 p-4", placeholder = @Html.DisplayNameFor(model => model.ConfirmPassword) } })
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+
+                                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control my-3 p-4", placeholder = @Html.DisplayNameFor(model => model.Age) } })
+                                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+
+                                    @Html.EditorFor(model => model.Phoneno, new { htmlAttributes = new { @class = "form-control my-3 p-4", placeholder = @Html.DisplayNameFor(model => model.Phoneno) } })
+                                    @Html.ValidationMessageFor(model => model.Phoneno, "", new { @class = "text-danger" })
+
+
+                                </div>
+                            </div><br />
+                            <div class="form-row">
+                                <div class="col-lg-7">
+
+                                    <input type="file" name="uploadfile" required />
+                                    @Html.ValidationMessageFor(model => model.Profile, "", new { @class = "text-danger" })
+
+
+                                </div>
+                            </div><br />
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    <input type="submit" value="Register" class="mybtn mt-3 mb-5" />
+                                </div>
+                            </div>
+
+                            <p>Alreaday have an account?  <a href="@Url.Action("Login","User")">Login here</a></p>
+
+                            @Html.ValidationSummary()
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

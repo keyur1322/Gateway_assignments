@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SourceControlFinalAssignment.Models.tbl_userdata>
+
+@{
+    ViewBag.Title = "List";
+}
+<style>
+    header{
+        
+        margin:0;
+        height:100px;
+
+    }
+
+    header > nav div {
+        height: 60px;
+    }
+
+    h3 {
+        color:white;
+    }
+
+    h5 {
+        color:white;
+    }
+    
+    h4 {
+        color: white;
+    }
+
+    h6 {
+        color: white;
+    }
+
+    .imguser{
+
+        border-radius: 25px;
+    }
+    
+</style>
+
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="row justify-content-center">
+                <h3 class="font-weight-bold py-2 p-2" style="margin-left: 20px;">Dashboard</h3>
+                <h5 class="font-weight-bold py-2 p-3" style="margin-left: 20px;">Welcome, @Session["Username"]</h5>
+            </div>
+
+            <div>
+                <button class="btn btn-secondary mx-3 my-2"  onclick="location.href='@Url.Action("Logout", "User")'">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="Form my-4 mx-5">
+        <div class="container border border-dark">
+            <div class="row no-gutters" style="height:400px">
+                <div class="col-lg-4 mx-3 my-3">
+                    <img src="@Html.ViewData["Img"]" class="imguser" alt="not found" width="300" height="300"  />
+                </div>
+                <div class="col-lg-7 pt-5">
+                    <form>
+                       <ul class="list-group">
+                           <li class="list-group-item active">@Session["Username"]</li>
+                           <li class="list-group-item">@Session["Email"]</li>
+                           <li class="list-group-item">Age - @Session["Age"]</li>
+                           <li class="list-group-item">Contact no. - @Session["Phoneno"]</li>
+                       </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
