@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Products" Relationship="Self.FK_tbl_Products_tbl_Categories" FromRole="tbl_Categories" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Category" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="ShortDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LongDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SmallImage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LargeImage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Categories" Relationship="Self.FK_tbl_Products_tbl_Categories" FromRole="tbl_Products" ToRole="tbl_Categories" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mobileno" Type="Int64" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Profile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_Products_tbl_Categories">
+    <End Role="tbl_Categories" Type="Self.tbl_Categories" Multiplicity="1" />
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AddDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Categories" EntityType="Self.tbl_Categories" />
+    <EntitySet Name="tbl_Products" EntityType="Self.tbl_Products" />
+    <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" />
+    <AssociationSet Name="FK_tbl_Products_tbl_Categories" Association="Self.FK_tbl_Products_tbl_Categories">
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Product_Management_System.Models.tbl_Products>
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="~/Content/CSS/Site2.css" rel="stylesheet" />
+
+
+</head>
+
+
+<body style="overflow-x:hidden; overflow-y:hidden;">
+
+    <nav class="navbar bg-light navbar-light" style="margin-left:290px; margin-top:10px; margin-right:5px;">
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <p class="font-weight-bolder mt-2">Welcome User !! </p>
+            </li>
+        </ul>
+
+        <div>
+            <button class="btn btn-outline-secondary mx-3 my-2" onclick="location.href='@Url.Action("Logout", "MVC")'">Logout</button>
+        </div>
+    </nav>
+           
+    <div class="row" style="padding:15px; margin-left:290px;">
+
+        <h2> Welcome,</h2>
+        <p style="padding:7px; margin-left:10px; font-size:20px; color:red;">@Session["useremail"]</p>
+    </div>
+   
+    <div class="vertical-nav bg-white" id="sidebar" style="margin-left:5px; margin-top:10px;">
+        <div class="py-4 px-3 mb-4 bg-light">
+            <div class="media d-flex align-items-center">
+                
+                <img src="@Session["userimg"]" alt="..." width="90" height="90" style="border:4px solid white;" class="mr-3 rounded-circle shadow-sm" />
+
+                <div class="media-body">
+                    <h6 class="m-0">@Session["useremail"]</h6>
+                    <p class="font-weight-normal text-muted mb-0">Web User</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-white font-weight-bold text-uppercase px-3 small pb-4 mb-0">Dashboard</p>
+
+        <ul class="ulclass" style="list-style:none;">
+            <li class="nav-text">
+                <a href="/MVC/Dashboard" class="nav-link text-white bg-transparent">
+                    <i class="fas fa fa-dashboard"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="nav-text">
+                <a href="/MVC/AddProduct" class="nav-link text-white bg-transparent">
+                    <i class="fas fa fa-plus-circle"></i>
+                    Add Product
+                </a>
+            </li>
+            <li class="nav-text">
+
+                <a href="/MVC/ProductList" class="nav-link text-white bg-transparent">
+                    <i class="fas fa fa-list"></i>
+                    List
+                </a>
+            </li>
+        </ul>
+    </div>
+   
+    <div class="center1" style="text-align:center; margin-left:200px;">
+       
+        <img class="img-1" src="~/Content/frontend_image/dashboard.svg" width="650" height="650" />
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <script src="~/Content/CSS/main1.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+
+</body>
+</html>

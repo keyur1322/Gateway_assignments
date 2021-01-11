@@ -1,0 +1,178 @@
+﻿
+body {
+    background: #fbf3ff;
+}
+
+
+.row {
+    height: 100%;
+}
+
+.myCard {
+
+    margin:100px;
+    position: relative;
+    background: #fff;
+    height: auto;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+
+.myForm {
+
+    position: relative;
+}
+
+.box {
+    position: relative;
+    padding: 50px;
+}
+
+.container {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.myRightCtn {
+    position: relative;
+    background-image: linear-gradient(45deg, #f046ff, #9b00e8);
+    border-radius: 25px;
+    height: 100%;
+    color: rgb(192, 192, 192);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    .myRightCtn header {
+        color: #fff;
+        font-size: 44px;
+    }
+
+
+.myLeftCtn {
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    height: 100%;
+    padding: 40px;
+}
+
+.myLeftCtn header {
+        color: blueviolet;
+        font-size: 27px;
+        font-weight: 700;
+        margin: 30px;
+
+}
+
+
+    .myLeftCtn .myInput {
+        width: 330px;
+        border-radius: 25px;
+        padding: 15px;
+        padding-left: 50px;
+        border: none;
+        -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.3);
+    }
+
+        .myLeftCtn .myInput:focus {
+            outline: none;
+        }
+
+
+    .myLeftCtn .butt {
+        background: linear-gradient(45deg, #bb36fd, #9b00e8);
+        color: #fff;
+        height: 50px;
+        width: 330px;
+        border: none;
+        border-radius: 25px;
+        padding: 10px;
+        -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+        box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    }
+
+        .myLeftCtn .butt:hover {
+            background: linear-gradient(45deg, #c85bff, #b726ff);
+        }
+
+        .myLeftCtn .butt:focus {
+            outline: none;
+        }
+
+    .myLeftCtn .fas {
+
+        position: relative;
+        color: #bb36fd;
+        left: 36px;
+    }
+
+
+
+.butt_out {
+    background: transparent;
+    color: #fff;
+    width: 120px;
+    border: 2px solid#fff;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+}
+
+    .butt_out:hover {
+        border: 2px solid#eecbff;
+    }
+
+    .butt_out:focus {
+        outline: none;
+    }
+
+.mygroup {
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.text {
+    margin-top: 40px;
+    color: white;
+    font-size: 27px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.ptext {
+    padding: 17px;
+}
+
+.myfilecss {
+
+    margin-left: 50px;
+    margin-bottom:50px;
+
+}
+
+
+.validation {
+    color: red;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+.imgfile {
+
+    margin-left: 50px;
+}
