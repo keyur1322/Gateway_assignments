@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "88adf841-1964-44d9-bbc8-b43b99de704f",
+		"name": "Postman Collection(Web_Api assignment)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44364/api/Hotel/AddHotel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"HotelName\" : \"Hotel3\",\r\n    \"Address\" : \"Aadajan\",\r\n    \"City\" : \"Surat\",\r\n    \"Pincode\" : \"\",\r\n    \"ContactNo\" : \"8765656446\",\r\n    \"ContactPerson\" : \"Priyanshi\",\r\n    \"Website\" : \"\",\r\n    \"Facebook\" : \"\",\r\n    \"Twitter\" : \"\",\r\n    \"IsActive\" : \"Yes\",\r\n    \"CreatedDate\" : \"2019-07-21\",\r\n    \"CreatedBy\" : \"PP\",\r\n    \"UpdatedDate\" : \"\",\r\n    \"UpdateBy\" : \"\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/AddHotel",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"AddHotel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/AddRoom/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Hotel_Id\" : \"1\",\r\n    \"RoomName\" : \"High1\",\r\n    \"Category\" : \"size 51-100\",\r\n    \"Price\" : \"7000\",\r\n    \"IsActive\" : \"No\",\r\n    \"CreatedDate\" : \"2020-07-13 12:12:12\",\r\n    \"CreatedBy\" : \"KP\",\r\n    \"UpdatedDate\" : \"2020-07-13 12:12:12\",\r\n    \"UpdatedBy\": \"MP\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/AddRoom/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"AddRoom",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/GetAllHotel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/GetAllHotel",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"GetAllHotel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/GetAllRoom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/GetAllRoom",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"GetAllRoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/AvailableRoom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UpdatedDate\" : \"2021-01-14\"\r\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/AvailableRoom",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"AvailableRoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/BookRoom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Room_Id\" : \"1\",\r\n    \"BookingDate\" : \"2021-01-18\",\r\n    \"status\" : \"Definitive\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/BookRoom",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"BookRoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/UpdateBookingDate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Booking_Id\" : \"2\",\r\n    \"Room_Id\" : \"3\",\r\n    \"BookingDate\" : \"2021-07-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/UpdateBookingDate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"UpdateBookingDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/UpdateBookingStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Booking_Id\" : \"1002\",\r\n    \"Status\" : \"Cancelled\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/UpdateBookingStatus",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"UpdateBookingStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44364/api/Hotel/DeleteBooking",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Booking_Id\" : \"1003\",\r\n    \"Status\" : \"Deleted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/Hotel/DeleteBooking",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"Hotel",
+						"DeleteBooking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
