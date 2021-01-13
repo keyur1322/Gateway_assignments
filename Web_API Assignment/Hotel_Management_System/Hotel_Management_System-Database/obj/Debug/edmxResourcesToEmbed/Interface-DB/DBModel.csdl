@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebAPI_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_hotels">
+    <Key>
+      <PropertyRef Name="Hotel_Id" />
+    </Key>
+    <Property Name="Hotel_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HotelName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pincode" Type="Int32" />
+    <Property Name="ContactNo" Type="Int64" Nullable="false" />
+    <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Website" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_rooms" Relationship="Self.PK_tbl_hotels_FK_tbl_rooms" FromRole="tbl_hotels" ToRole="tbl_rooms" />
+  </EntityType>
+  <EntityType Name="tbl_rooms">
+    <Key>
+      <PropertyRef Name="Room_Id" />
+    </Key>
+    <Property Name="Room_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hotel_Id" Type="Int32" Nullable="false" />
+    <Property Name="RoomName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_hotels" Relationship="Self.PK_tbl_hotels_FK_tbl_rooms" FromRole="tbl_rooms" ToRole="tbl_hotels" />
+  </EntityType>
+  <Association Name="PK_tbl_hotels_FK_tbl_rooms">
+    <End Role="tbl_hotels" Type="Self.tbl_hotels" Multiplicity="1" />
+    <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_hotels">
+        <PropertyRef Name="Hotel_Id" />
+      </Principal>
+      <Dependent Role="tbl_rooms">
+        <PropertyRef Name="Hotel_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebAPI_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_hotels" EntityType="Self.tbl_hotels" />
+    <EntitySet Name="tbl_rooms" EntityType="Self.tbl_rooms" />
+    <AssociationSet Name="PK_tbl_hotels_FK_tbl_rooms" Association="Self.PK_tbl_hotels_FK_tbl_rooms">
+      <End Role="tbl_hotels" EntitySet="tbl_hotels" />
+      <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
